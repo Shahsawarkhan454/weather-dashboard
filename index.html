@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check current weather and forecasts for cities around the world.">
+  <title>Live Weather Dashboard</title>
+  <link rel="stylesheet" href="covering.css">
+  
+</head>
+<body>
+  <main class="dashboard">
+    <header class="header">
+      <div>
+        <p class="pleasent">WEATHER FORECAST</p>
+        <h1>Live Weather</h1>
+        <p class="subtitle">Your city, your weather.</p>
+      </div>
+      <span class="header-icon" aria-hidden="true">🌤️</span>
+    </header>
+
+    <form id="search-form" class="search-form">
+      <label class="sr-only" for="city-input">Enter city name</label>
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Search a city, e.g. Islamabad"
+        autocomplete="off"
+        required
+      >
+      <button type="submit" id="search-button">Search</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite">
+      Search for a city to see its weather.
+    </p>
+
+    <section id="weather-panel" class="weather-panel" hidden>
+      <div class="current-weather">
+        <div>
+          <p id="location" class="location">Islamabad, Pakistan</p>
+          <p id="local-time" class="local-time"></p>
+          <p id="condition" class="condition">--</p>
+          <p id="temperature" class="temperature">--°C</p>
+          <p id="feels-like" class="feels-like">Feels like --°C</p>
+        </div>
+        <div id="weather-icon" class="weather-icon"
+             aria-hidden="true">🌤️</div>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <span>💧 Humidity</span>
+          <strong id="humidity">--%</strong>
+        </article>
+        <article class="detail-card">
+          <span>💨 Wind speed</span>
+          <strong id="wind">-- km/h</strong>
+        </article>
+        <article class="detail-card">
+          <span>☁️ Cloud cover</span>
+          <strong id="clouds">--%</strong>
+        </article>
+        <article class="detail-card">
+          <span>🌧️ Precipitation</span>
+          <strong id="rain">-- mm</strong>
+        </article>
+      </div>
+
+      <section class="forecast-section">
+        <h2>7-Day Forecast</h2>
+        <div id="forecast" class="forecast-grid"></div>
+      </section>
+    </section>
+
+    <footer>
+      Weather data by
+      <a href="https://open-meteo.com/"
+         target="_blank" rel="noopener noreferrer">Open-Meteo.com</a>
+         <h3>Developed by Sher Shah Sawri</h3>
+    </footer>
+  </main>
+  <script src="logic.js" defer></script>
+</body>
+</html>
